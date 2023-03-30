@@ -7,6 +7,8 @@ public class Variancia {
         double[] xi = new double[11];
         double[] xi2 = new double[11];
         double m = 0D;
+        double variancia = 0;
+        double somaXi2 = 0;
 
         for (int i = 0; i < jogador.length; i++) {
             jogador[i] = i;
@@ -18,11 +20,15 @@ public class Variancia {
             xi[i] = xi[i] - m;
 
             xi2[i] = Math.pow((xi[i]), 2);
+            somaXi2 += xi2[i];
         }
+
+        variancia = somaXi2 / (acertos.length - 1);
 
         System.out.printf("%-10s %-10s %-10s %-10s\n", "Jogador", "Acertos", "Xi", "(Xi)²");
         for (int i = 0; i < xi.length; i++){
             System.out.printf("%-10d %-10.2f %-10.2f %-10.2f\n", jogador[i], acertos[i], xi[i], xi2[i]);
         }
+        System.out.printf("Variância: %.2f\n", variancia);
     }
 }
