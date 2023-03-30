@@ -18,8 +18,7 @@ public class NotaConceito {
         System.out.println("Digite a nota 3 do aluno " + nAluno + ": ");
         Double nota3 = scan.nextDouble();
 
-        System.out.println("Digite a média dos exercícios do aluno " + nAluno + ": ");
-        Double ME = scan.nextDouble();
+        Double ME = (nota1 + nota2 + nota3) / 3;
 
         scan.close();
 
